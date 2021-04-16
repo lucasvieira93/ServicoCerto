@@ -11,6 +11,7 @@
         android:layout_height="0dp"
         android:gravity="center"
         android:text="Tela Principal"
+        android:textColor="@color/cor_principal"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

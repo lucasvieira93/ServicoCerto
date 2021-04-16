@@ -7,4 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="cor_botao">#48525E</color>
+    <color name="cor_principal">#1D2D3D</color>
+    <color name="cor_secundaria">#8190A7</color>
+    <color name="cinza">#C1C5CE</color>
+    <color name="transparente">#7AFFFFFF</color>
+
 </resources>
