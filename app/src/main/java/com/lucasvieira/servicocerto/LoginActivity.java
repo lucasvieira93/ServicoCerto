@@ -34,4 +34,9 @@ public class LoginActivity extends AppCompatActivity {
         Toast.makeText(this, "Verifique seu usuário/senha", Toast.LENGTH_SHORT).show();
         cont++;
     }
+
+    public void cadastrarUsuario(View view){
+        Intent i = new Intent(this, CadastroActivity.class);
+        startActivity(i);
+    }
 }

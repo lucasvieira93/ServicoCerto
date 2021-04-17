@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background2"
-    android:padding="10dp"
+    android:padding="18dp"
     tools:context=".LoginActivity">
 
     <ImageView
@@ -39,8 +39,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
         app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
         tools:layout_editor_absoluteX="161dp">
-
+        <requestFocus/>
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -53,6 +55,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
         tools:layout_editor_absoluteX="70dp">
 
@@ -79,6 +83,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:onClick="cadastrarUsuario"
         android:text="Cadastrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.157"
