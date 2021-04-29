@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:title="@string/app_name">
+            <menu>
+                <item
+                    android:id="@+id/nav_home"
+                    android:title="Inserir serviço" />
+                <item
+                    android:id="@+id/nav_gallery"
+                    android:title="Notificações" />
+                <item
+                    android:title="Chat" />
+                <item
+                    android:title="Favoritos" />
+                <item
+                    android:title="Minha conta" />
+            </menu>
+        </item>
+
+        <item>
+            <item
+                android:title="Central de ajuda" />
+            <item
+                android:title="Termos de uso" />
+        </item>
+
+    </group>
+
+</menu>
