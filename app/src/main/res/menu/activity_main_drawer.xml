@@ -4,31 +4,47 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item
-            android:title="@string/app_name">
+        <item android:title="@string/app_name">
             <menu>
                 <item
                     android:id="@+id/nav_home"
+                    android:title="Home" />
+
+                <item
+                    android:id="@+id/nav_servico"
                     android:title="Inserir serviço" />
+
                 <item
-                    android:id="@+id/nav_gallery"
+                    android:id="@+id/nav_notificacoes"
                     android:title="Notificações" />
+
                 <item
+                    android:id="@+id/nav_chat"
                     android:title="Chat" />
+
                 <item
+                    android:id="@+id/nav_favoritos"
                     android:title="Favoritos" />
+
                 <item
-                    android:title="Minha conta" />
+                    android:id="@+id/nav_conta"
+                    android:title="Minha Conta" />
             </menu>
         </item>
 
-        <item>
-            <item
-                android:title="Central de ajuda" />
-            <item
-                android:title="Termos de uso" />
-        </item>
-
     </group>
+
+    <item android:title="Saiba Mais">
+        <menu>
+            <item
+                android:id="@+id/nav_ajuda"
+                android:title="Central de Ajuda" />
+
+            <item
+                android:id="@+id/nav_termos"
+                android:title="Termos de Uso" />
+
+        </menu>
+    </item>
 
 </menu>
