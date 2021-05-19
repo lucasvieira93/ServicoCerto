@@ -9,48 +9,48 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.lucasvieira.servicocerto.ui.home.HomeFragment"
-        android:label="Principal"
+        android:label=""
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_ajuda"
         android:name="com.lucasvieira.servicocerto.ui.ajuda.AjudaFragment"
-        android:label="fragment_ajuda"
+        android:label=""
         tools:layout="@layout/fragment_ajuda" />
 
     <fragment
         android:id="@+id/nav_favoritos"
         android:name="com.lucasvieira.servicocerto.ui.favoritos.FavoritosFragment"
-        android:label="fragment_favoritos"
+        android:label=""
         tools:layout="@layout/fragment_favoritos" />
     <fragment
         android:id="@+id/nav_chat"
         android:name="com.lucasvieira.servicocerto.ui.chat.ChatFragment"
-        android:label="fragment_chat"
+        android:label=""
         tools:layout="@layout/fragment_chat" />
 
     <fragment
         android:id="@+id/nav_notificacoes"
         android:name="com.lucasvieira.servicocerto.ui.notificacoes.NotificacoesFragment"
-        android:label="fragment_notificacoes"
+        android:label=""
         tools:layout="@layout/fragment_notificacoes" />
 
     <fragment
         android:id="@+id/nav_servico"
         android:name="com.lucasvieira.servicocerto.ui.servico.ServicoFragment"
-        android:label="fragment_servico"
+        android:label=""
         tools:layout="@layout/fragment_servico" />
 
     <fragment
         android:id="@+id/nav_termos"
         android:name="com.lucasvieira.servicocerto.ui.termos.TermosFragment"
-        android:label="fragment_termos"
+        android:label=""
         tools:layout="@layout/fragment_termos" />
 
     <fragment
         android:id="@+id/nav_conta"
         android:name="com.lucasvieira.servicocerto.ui.minhaconta.MinhaContaFragment"
-        android:label="fragment_minha_conta"
+        android:label=""
         tools:layout="@layout/fragment_minha_conta" />
 
 </navigation>

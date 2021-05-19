@@ -14,6 +14,8 @@
         <item name="android:navigationBarColor">@color/cor_principal</item>
         <!-- Customize your theme here. -->
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="android:textColorSecondary">@color/white</item>
+
 
     </style>
 

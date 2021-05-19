@@ -22,5 +22,6 @@
         android:background="@color/cor_principal"
         app:headerLayout="@layout/nav_header_main"
         app:itemTextColor="@color/cor_secundaria"
+        app:itemIconTint="@color/cor_botao"
         app:menu="@menu/activity_main_drawer" />
 </androidx.drawerlayout.widget.DrawerLayout>
