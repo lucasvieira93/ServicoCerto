@@ -10,18 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ServicoCerto">
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:label="@string/title_activity_main2"
             android:theme="@style/Theme.ServicoCerto.NoActionBar"></activity>
-        <activity android:name=".CadastroActivity" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".activity.CadastroActivity" />
+        <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".activity.LoginActivity" />
     </application>
 
 </manifest>

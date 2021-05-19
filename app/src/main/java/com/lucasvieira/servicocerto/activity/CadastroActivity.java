@@ -1,4 +1,4 @@
-package com.lucasvieira.servicocerto;
+package com.lucasvieira.servicocerto.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.lucasvieira.servicocerto.R;
 
 public class CadastroActivity extends AppCompatActivity {
 

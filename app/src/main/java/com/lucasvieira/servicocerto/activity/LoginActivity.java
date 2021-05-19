@@ -1,4 +1,4 @@
-package com.lucasvieira.servicocerto;
+package com.lucasvieira.servicocerto.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
+import com.lucasvieira.servicocerto.R;
 
 public class LoginActivity extends AppCompatActivity {
 
