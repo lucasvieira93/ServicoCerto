@@ -34,6 +34,7 @@
         <requestFocus />
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/round_corner"
@@ -51,10 +52,13 @@
         tools:layout_editor_absoluteX="70dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editSenha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/round_corner"
-            android:hint="Digite sua senha" />
+            android:hint="Digite sua senha"
+            android:inputType="textPassword"
+            android:password="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -62,7 +66,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:onClick="logarUsuario"
+        android:onClick="validarAutenticacaoUsuario"
         android:text="Logar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
