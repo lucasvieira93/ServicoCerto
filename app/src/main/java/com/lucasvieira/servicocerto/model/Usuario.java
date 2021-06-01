@@ -12,9 +12,11 @@ import java.util.Map;
 public class Usuario implements Serializable {
     private String id;
     private String nome;
+    private String sobrenome;
     private String email;
     private String senha;
     private String foto;
+    private int cpf;
 
     public Usuario() {
     }
@@ -63,6 +65,14 @@ public class Usuario implements Serializable {
         this.nome = nome;
     }
 
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -86,6 +96,14 @@ public class Usuario implements Serializable {
 
     public void setFoto(String foto) {
         this.foto = foto;
+    }
+
+    public int getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(int cpf) {
+        this.cpf = cpf;
     }
 
 }
