@@ -49,7 +49,7 @@ public class CadastroActivity extends AppCompatActivity {
 
                 if (task.isSuccessful()) {
                     Toast.makeText(CadastroActivity.this, "Cadastrado com Sucesso!", Toast.LENGTH_SHORT).show();
-                    UsuarioFirebase.atualizarNomeUsuario(usuario.getNome());
+                    UsuarioFirebase.atualizarNomeUsuario(usuario.getNomeCompleto());
                     finish();
 
                     try {
@@ -93,7 +93,7 @@ public class CadastroActivity extends AppCompatActivity {
         if (!textoNome.isEmpty() || !textoSobrenome.isEmpty() || !textoEmail.isEmpty() || !textoSenha.isEmpty()) {
             Usuario usuario = new Usuario();
             usuario.setNome(textoNome);
-            usuario.setNome(textoSobrenome);
+            usuario.setSobrenome(textoSobrenome);
             usuario.setEmail(textoEmail);
             usuario.setSenha(textoSenha);
 

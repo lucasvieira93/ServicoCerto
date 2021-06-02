@@ -53,12 +53,12 @@ public class UsuarioFirebase {
         }
     }
 
-    public static boolean atualizarNomeUsuario(String nome) {
+    public static boolean atualizarNomeUsuario(String nomeCompleto) {
 
         try {
             FirebaseUser user = getUsuarioAtual();
             UserProfileChangeRequest profile = new UserProfileChangeRequest.Builder()
-                    .setDisplayName(nome)
+                    .setDisplayName(nomeCompleto)
                     .build();
 
             user.updateProfile(profile).addOnCompleteListener(new OnCompleteListener<Void>() {

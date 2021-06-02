@@ -1,20 +1,24 @@
 package com.lucasvieira.servicocerto.activity;
 
-import android.content.Intent;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.lucasvieira.servicocerto.R;
 import com.lucasvieira.servicocerto.config.ConfiguracaoFirebase;
+import com.lucasvieira.servicocerto.helper.UsuarioFirebase;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -27,7 +31,13 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    private NavigationView navigationView;
+    private View hearderView;
     private FirebaseAuth autenticacao;
+    private FirebaseUser usuarioAtual;
+
+    private TextView navNome;
+    private TextView navEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +46,13 @@ public class MainActivity extends AppCompatActivity {
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
+        navigationView = findViewById(R.id.nav_view);
+        hearderView = navigationView.getHeaderView(0);
         autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
+        usuarioAtual = UsuarioFirebase.getUsuarioAtual();
+
+        navNome = hearderView.findViewById(R.id.textNavNome);
+        navEmail = hearderView.findViewById(R.id.textNavEmail);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -49,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Botão qualquer", null).show();
             }
         });
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -61,17 +78,25 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_home);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        //Setando configurações do usuário
+        String nomeUsuarioAtual = usuarioAtual.getDisplayName();
+        String emailUsuarioAtual = usuarioAtual.getEmail();
+
+        navNome.setText(nomeUsuarioAtual);
+        navEmail.setText(emailUsuarioAtual);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main_activity2, menu);
+        getMenuInflater().inflate(R.menu.mais_opcoes, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        //Botão de mais opções, adicionar no switch abaixo
 
         switch (item.getItemId()) {
 
@@ -80,8 +105,25 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.botao_logout:
-                deslogarUsuario();
-                finish();
+                AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+
+                //Configura título e msg
+                dialog.setTitle("Logout");
+                dialog.setMessage("Deseja realmente sair?");
+
+                dialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        deslogarUsuario();
+                        Toast.makeText(MainActivity.this, "Até logo!", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
+                });
+
+                dialog.setNegativeButton("Não", null);
+                dialog.create();
+                dialog.show();
+
                 break;
         }
 
@@ -102,4 +144,5 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
 }

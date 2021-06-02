@@ -16,7 +16,7 @@ public class Usuario implements Serializable {
     private String email;
     private String senha;
     private String foto;
-    private int cpf;
+//    private int cpf;
 
     public Usuario() {
     }
@@ -73,6 +73,10 @@ public class Usuario implements Serializable {
         this.sobrenome = sobrenome;
     }
 
+    public String getNomeCompleto(){
+        return nome + " " + sobrenome;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -98,13 +102,13 @@ public class Usuario implements Serializable {
         this.foto = foto;
     }
 
-    public int getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(int cpf) {
-        this.cpf = cpf;
-    }
+//    public int getCpf() {
+//        return cpf;
+//    }
+//
+//    public void setCpf(int cpf) {
+//        this.cpf = cpf;
+//    }
 
 }
 
