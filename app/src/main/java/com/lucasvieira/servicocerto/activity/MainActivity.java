@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         // menu should be considered as top level destinations.
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_servico, R.id.nav_notificacoes, R.id.nav_chat, R.id.nav_favoritos, R.id.nav_conta, R.id.nav_ajuda, R.id.nav_termos)
+                R.id.nav_home, R.id.nav_servico, R.id.nav_conta, R.id.nav_chat, R.id.nav_ajuda, R.id.nav_termos)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_home);
@@ -100,16 +100,13 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
 
-            case R.id.botao_configuracoes:
-                Toast.makeText(this, "Ainda sem tela de configurações!", Toast.LENGTH_SHORT).show();
-                break;
-
             case R.id.botao_logout:
                 AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
 
                 //Configura título e msg
                 dialog.setTitle("Logout");
                 dialog.setMessage("Deseja realmente sair?");
+                dialog.setIcon(R.drawable.ic_logout_24);
 
                 dialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                     @Override
