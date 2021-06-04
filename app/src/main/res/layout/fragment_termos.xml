@@ -39,9 +39,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/round_corner"
-            android:backgroundTint="#FFFFFF"
-            android:backgroundTintMode="src_over"
+            android:background="@color/white"
             android:orientation="vertical"
             android:padding="12dp">
 
@@ -52,9 +50,8 @@
                 android:layout_gravity="fill"
                 android:breakStrategy="high_quality"
                 android:clickable="false"
-                android:fontFamily="sans-serif"
+                android:fontFamily="serif"
                 android:gravity="fill|fill_horizontal|end"
-                android:marqueeRepeatLimit="marquee_forever"
                 android:padding="8dp"
                 android:text="@string/termos_uso"
                 app:lineHeight="23sp" />
