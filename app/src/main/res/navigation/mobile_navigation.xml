@@ -19,11 +19,6 @@
         tools:layout="@layout/fragment_ajuda" />
 
     <fragment
-        android:id="@+id/nav_favoritos"
-        android:name="com.lucasvieira.servicocerto.ui.favoritos.FavoritosFragment"
-        android:label=""
-        tools:layout="@layout/fragment_favoritos" />
-    <fragment
         android:id="@+id/nav_chat"
         android:name="com.lucasvieira.servicocerto.ui.chat.ChatFragment"
         android:label=""

@@ -5,12 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerHome"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="TELA PRINCIPAL =)"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
+        android:layout_margin="8dp" />
 </FrameLayout>

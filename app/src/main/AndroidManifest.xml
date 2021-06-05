@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ServicoCerto">
+        <activity android:name=".activity.ChatActivity"></activity>
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.ServicoCerto.NoActionBar"></activity>
+            android:theme="@style/Theme.ServicoCerto.NoActionBar" />
         <activity android:name=".activity.CadastroActivity" />
         <activity android:name=".activity.SplashActivity">
             <intent-filter>
