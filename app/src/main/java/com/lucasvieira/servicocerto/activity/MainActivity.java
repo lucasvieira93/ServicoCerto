@@ -1,6 +1,7 @@
 package com.lucasvieira.servicocerto.activity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -57,22 +58,13 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        FloatingActionButton fab = findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Ainda sem ações!", Snackbar.LENGTH_LONG)
-//                        .setAction("Botão qualquer", null).show();
-//            }
-//        });
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_servico, R.id.nav_conta, R.id.nav_chat, R.id.nav_ajuda, R.id.nav_termos)
+                R.id.nav_home, R.id.nav_conta, R.id.nav_chat, R.id.nav_ajuda, R.id.nav_termos)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_home);
@@ -87,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         navEmail.setText(emailUsuarioAtual);
     }
 
+    //layout mais opções
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -94,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    //botões mais opções
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         //Botão de mais opções, adicionar no switch abaixo
@@ -140,6 +134,20 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void enviarEmail() {
+
+        //configurando intent para email
+        Intent intent = new Intent( Intent.ACTION_SEND );
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"servicocertosc@gmail.com"} );
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Ajuda - Serviço Certo");
+        intent.putExtra(Intent.EXTRA_TEXT, "(Insira o motivo do contato de forma objetiva!)");
+
+        intent.setType("message/rfc822");
+
+        startActivity(Intent.createChooser(intent, "Ajuda via email"));
+
     }
 
 }

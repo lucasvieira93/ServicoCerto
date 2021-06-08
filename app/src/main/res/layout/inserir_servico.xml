@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".activity.InserirActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,23 +17,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <include layout="@layout/toolbar"/>
+
         <ImageView
             android:id="@+id/capaImage"
-            android:backgroundTint="@color/cor_secundaria"
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:background="@drawable/ic_camera_24"
+            android:background="@drawable/ic_servico"
             android:elevation="10dp"
             android:scaleType="centerCrop" />
 
-        <TextView
+        <EditText
             android:id="@+id/detalheServicoTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
             android:layout_marginTop="50dp"
-            android:background="@color/white"
-            android:text="Titulo do Serviço"
+            android:hint="Titulo do Serviço"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -42,19 +42,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
-            android:background="@color/white"
             android:text="Usuario"
             android:textSize="14sp" />
 
-        <TextView
+        <EditText
             android:id="@+id/detalheServicoDescricao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
             android:layout_marginVertical="20dp"
             android:layout_marginTop="10dp"
-            android:background="@color/white"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus ante et erat sagittis placerat. Ut id lacus nec erat eleifend facilisis quis vel nibh. Vivamus commodo enim ut ornare laoreet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis sagittis felis at malesuada interdum. Maecenas faucibus velit eget leo luctus commodo. Ut arcu ipsum, vehicula et felis at, eleifend auctor nulla. Sed sit amet sem eu leo efficitur egestas. Maecenas eu metus et quam vulputate venenatis et ac velit. Praesent ut dui eget ex gravida sodales. Fusce ante sapien, dignissim eget facilisis vitae, interdum at diam. Aenean non neque orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.  "
+            android:hint="Descreva informações sobre o serviço que deseja solicitar"
             android:textSize="14sp" />
 
     </LinearLayout>
@@ -65,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginBottom="16dp"
-        android:text="Entrar em Contato"
+        android:text="Criar Serviço"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

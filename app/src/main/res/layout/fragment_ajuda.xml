@@ -3,14 +3,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ajuda.AjudaFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.ajuda.AjudaFragment"
+    android:padding="12dp"
+    android:background="@drawable/background">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fontFamily="sans-serif"
         android:gravity="center"
-        android:text="TELA DE AJUDA"
+        android:paddingHorizontal="18dp"
+        android:paddingBottom="150dp"
+        android:text="@string/contato_ajuda"
         android:textSize="24sp"
         android:textStyle="bold" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAjuda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_margin="@dimen/fab_margin"
+        android:backgroundTint="@color/cor_principal"
+        app:tint="@color/white"
+        app:srcCompat="@drawable/ic_email_24" />
 
 </FrameLayout>

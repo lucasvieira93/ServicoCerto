@@ -12,29 +12,14 @@
                     android:title="Home" />
 
                 <item
-                    android:id="@+id/nav_servico"
-                    android:icon="@drawable/ic_servico"
-                    android:title="Inserir serviço" />
-
-                <item
                     android:id="@+id/nav_conta"
                     android:icon="@drawable/ic_minha_conta_24"
                     android:title="Minha Conta" />
-
-<!--                <item-->
-<!--                    android:id="@+id/nav_notificacoes"-->
-<!--                    android:icon="@drawable/ic_notificacao_24"-->
-<!--                    android:title="Notificações" />-->
 
                 <item
                     android:id="@+id/nav_chat"
                     android:icon="@drawable/ic_chat_24"
                     android:title="Chat" />
-
-<!--                <item-->
-<!--                    android:id="@+id/nav_favoritos"-->
-<!--                    android:icon="@drawable/ic_favoritos_24"-->
-<!--                    android:title="Favoritos" />-->
 
 
             </menu>

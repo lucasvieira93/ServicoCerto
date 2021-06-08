@@ -8,7 +8,7 @@
     android:padding="8dp">
 
     <ImageView
-        android:id="@+id/imageServico"
+        android:id="@+id/listaServicoImagem"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -16,7 +16,7 @@
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <TextView
-        android:id="@+id/textViewTituloServico"
+        android:id="@+id/listaServicoTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -24,11 +24,11 @@
         android:text="Titulo do Serviço"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageServico"
+        app:layout_constraintStart_toEndOf="@+id/listaServicoImagem"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewUsuarioServico"
+        android:id="@+id/listaServicoUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -36,11 +36,11 @@
         android:text="Fulano Disposto"
         android:textSize="12sp"
         android:textStyle="italic"
-        app:layout_constraintStart_toEndOf="@+id/imageServico"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTituloServico" />
+        app:layout_constraintStart_toEndOf="@+id/listaServicoImagem"
+        app:layout_constraintTop_toBottomOf="@+id/listaServicoTitulo" />
 
     <TextView
-        android:id="@+id/textViewDescricaoServico"
+        android:id="@+id/listaServicoDescricao"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -48,6 +48,6 @@
         android:singleLine="true"
         android:text="Descrição bem descritiva descrevendo o que será descrevido."
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageServico"
-        app:layout_constraintTop_toBottomOf="@+id/textViewUsuarioServico" />
+        app:layout_constraintStart_toEndOf="@+id/listaServicoImagem"
+        app:layout_constraintTop_toBottomOf="@+id/listaServicoUsuario" />
 </androidx.constraintlayout.widget.ConstraintLayout>

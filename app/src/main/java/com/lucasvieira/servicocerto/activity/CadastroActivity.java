@@ -15,7 +15,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
-import com.google.firebase.database.DatabaseReference;
 import com.lucasvieira.servicocerto.R;
 import com.lucasvieira.servicocerto.config.ConfiguracaoFirebase;
 import com.lucasvieira.servicocerto.helper.Base64Custom;
@@ -24,7 +23,7 @@ import com.lucasvieira.servicocerto.model.Usuario;
 
 public class CadastroActivity extends AppCompatActivity {
 
-    private TextInputEditText campoNome, campoSobrenome, campoEmail, campoSenha;
+    private TextInputEditText campoNome, campoEmail, campoSenha;
     private FirebaseAuth autenticacao;
 
     @Override
@@ -33,7 +32,6 @@ public class CadastroActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro);
 
         campoNome = findViewById(R.id.textNomeCadastro);
-        campoSobrenome = findViewById(R.id.textSobrenomeCadastro);
         campoEmail = findViewById(R.id.textEmailCadastro);
         campoSenha = findViewById(R.id.textSenhaCadastro);
     }
@@ -49,7 +47,7 @@ public class CadastroActivity extends AppCompatActivity {
 
                 if (task.isSuccessful()) {
                     Toast.makeText(CadastroActivity.this, "Cadastrado com Sucesso!", Toast.LENGTH_SHORT).show();
-                    UsuarioFirebase.atualizarNomeUsuario(usuario.getNomeCompleto());
+                    UsuarioFirebase.atualizarNomeUsuario(usuario.getNome());
                     finish();
 
                     try {
@@ -86,14 +84,12 @@ public class CadastroActivity extends AppCompatActivity {
     public void validarUsuario(View view) {
 
         String textoNome = campoNome.getText().toString();
-        String textoSobrenome = campoSobrenome.getText().toString();
         String textoEmail = campoEmail.getText().toString();
         String textoSenha = campoSenha.getText().toString();
 
-        if (!textoNome.isEmpty() || !textoSobrenome.isEmpty() || !textoEmail.isEmpty() || !textoSenha.isEmpty()) {
+        if (!textoNome.isEmpty() || !textoEmail.isEmpty() || !textoSenha.isEmpty()) {
             Usuario usuario = new Usuario();
             usuario.setNome(textoNome);
-            usuario.setSobrenome(textoSobrenome);
             usuario.setEmail(textoEmail);
             usuario.setSenha(textoSenha);
 

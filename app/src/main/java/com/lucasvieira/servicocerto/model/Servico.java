@@ -4,21 +4,12 @@ import java.io.Serializable;
 
 public class Servico implements Serializable {
 
-    private String id;
     private String titulo;
     private String usuario;
     private String descricao;
     private String imagem;
 
     public Servico() {
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getTitulo() {

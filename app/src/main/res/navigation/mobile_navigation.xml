@@ -25,18 +25,6 @@
         tools:layout="@layout/fragment_chat" />
 
     <fragment
-        android:id="@+id/nav_notificacoes"
-        android:name="com.lucasvieira.servicocerto.ui.notificacoes.NotificacoesFragment"
-        android:label=""
-        tools:layout="@layout/fragment_notificacoes" />
-
-    <fragment
-        android:id="@+id/nav_servico"
-        android:name="com.lucasvieira.servicocerto.ui.servico.ServicoFragment"
-        android:label=""
-        tools:layout="@layout/fragment_servico" />
-
-    <fragment
         android:id="@+id/nav_termos"
         android:name="com.lucasvieira.servicocerto.ui.termos.TermosFragment"
         android:label=""
