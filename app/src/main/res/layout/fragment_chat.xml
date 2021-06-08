@@ -5,12 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".ui.chat.ChatFragment">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewListaContatos"
+        android:scrollbars="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="TELA DE CHAT"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent" />
 
 </FrameLayout>
