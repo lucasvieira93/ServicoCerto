@@ -2,6 +2,7 @@ package com.lucasvieira.servicocerto.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.view.Menu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -29,6 +31,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
@@ -39,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView navNome;
     private TextView navEmail;
+    private CircleImageView navFoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
         navNome = hearderView.findViewById(R.id.textNavNome);
         navEmail = hearderView.findViewById(R.id.textNavEmail);
+        navFoto = hearderView.findViewById(R.id.imageNavFoto);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -74,6 +80,18 @@ public class MainActivity extends AppCompatActivity {
         //Setando configurações do usuário
         String nomeUsuarioAtual = usuarioAtual.getDisplayName();
         String emailUsuarioAtual = usuarioAtual.getEmail();
+
+        Uri url = usuarioAtual.getPhotoUrl();
+
+        if (url != null) {
+
+            Glide.with(getApplicationContext())
+                    .load(url)
+                    .into(navFoto);
+
+        } else {
+            navFoto.setImageResource(R.drawable.padrao);
+        }
 
         navNome.setText(nomeUsuarioAtual);
         navEmail.setText(emailUsuarioAtual);
