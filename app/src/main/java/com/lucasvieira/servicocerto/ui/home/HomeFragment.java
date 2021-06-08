@@ -92,7 +92,7 @@ public class HomeFragment extends Fragment {
         usuariosRef = ConfiguracaoFirebase.getFirebaseDatabase().child("usuarios");
         usuarioAtual = UsuarioFirebase.getUsuarioAtual();
 
-        FloatingActionButton fab = view.findViewById(R.id.fab);
+        FloatingActionButton fab = view.findViewById(R.id.fabHome);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

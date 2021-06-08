@@ -136,18 +136,5 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void enviarEmail() {
-
-        //configurando intent para email
-        Intent intent = new Intent( Intent.ACTION_SEND );
-        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"servicocertosc@gmail.com"} );
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Ajuda - Serviço Certo");
-        intent.putExtra(Intent.EXTRA_TEXT, "(Insira o motivo do contato de forma objetiva!)");
-
-        intent.setType("message/rfc822");
-
-        startActivity(Intent.createChooser(intent, "Ajuda via email"));
-
-    }
 
 }
