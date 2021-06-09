@@ -18,7 +18,10 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.ServicoCerto">
-        <activity android:name=".activity.DetalhesActivity"></activity>
+
+        <activity
+            android:name=".activity.DetalhesActivity"
+            android:parentActivityName=".activity.MainActivity" />
         <activity
             android:name=".activity.InserirActivity"
             android:parentActivityName=".activity.MainActivity" />

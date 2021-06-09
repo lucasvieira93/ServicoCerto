@@ -78,7 +78,7 @@ public class HomeFragment extends Fragment {
         //Configurar evento de clique no recyclerView
         recyclerViewHome.addOnItemTouchListener(
                 new RecyclerItemClickListener(
-                        getActivity(),
+                        getContext(),
                         recyclerViewHome,
                         new RecyclerItemClickListener.OnItemClickListener() {
                             @Override
@@ -91,7 +91,6 @@ public class HomeFragment extends Fragment {
 
                             @Override
                             public void onLongItemClick(View view, int position) {
-                                Toast.makeText(getActivity(), "Titulo: " + listaServicos.get(position).getTitulo(), Toast.LENGTH_SHORT).show();
 
                             }
 

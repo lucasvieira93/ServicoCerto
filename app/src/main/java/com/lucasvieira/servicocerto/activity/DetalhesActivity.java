@@ -27,7 +27,7 @@ public class DetalhesActivity extends AppCompatActivity {
         //Configurações Toolbar
         Toolbar toolbar = findViewById(R.id.toolbarPrincipal);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(servicoSelecionado.getTitulo());
+        getSupportActionBar().setTitle("Detalhes Serviço");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         campoTitulo = findViewById(R.id.inserirServicoTitulo);
@@ -35,14 +35,15 @@ public class DetalhesActivity extends AppCompatActivity {
         campoDescricao = findViewById(R.id.inserirServicoDescricao);
         campoImagem = findViewById(R.id.inserirServicoImagem);
 
-        //Recuperar dados do serviço
+//        Recuperar dados do serviço
         Bundle bundle = getIntent().getExtras();
+        servicoSelecionado = (Servicos) bundle.getSerializable("detalheServico");
         if (bundle != null) {
 
-            servicoSelecionado = (Servicos) bundle.getSerializable("detalheServico");
             campoTitulo.setText(servicoSelecionado.getTitulo());
             campoUsuario.setText(servicoSelecionado.getUsuario());
             campoDescricao.setText(servicoSelecionado.getDescricao());
+
 
             String foto = servicoSelecionado.getImagem();
             if (foto != null) {

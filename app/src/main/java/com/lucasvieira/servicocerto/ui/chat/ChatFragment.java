@@ -65,7 +65,7 @@ public class ChatFragment extends Fragment {
         //Configurar evento de clique no recyclerView
         recyclerViewListaContatos.addOnItemTouchListener(
                 new RecyclerItemClickListener(
-                        getContext(),
+                        getActivity(),
                         recyclerViewListaContatos,
                         new RecyclerItemClickListener.OnItemClickListener() {
                             @Override
