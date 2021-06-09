@@ -126,7 +126,7 @@ public class HomeFragment extends Fragment {
                 for (DataSnapshot dados : dataSnapshot.getChildren()) {
 
                     Servicos servicos = dados.getValue(Servicos.class);
-                        listaServicos.add(servicos);
+                    listaServicos.add(servicos);
 
                 }
 
