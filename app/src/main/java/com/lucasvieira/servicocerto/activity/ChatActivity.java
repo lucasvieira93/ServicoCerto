@@ -10,12 +10,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -39,6 +41,7 @@ public class ChatActivity extends AppCompatActivity {
     private CircleImageView circleImageViewFoto;
     private Usuario usuarioDestinatario;
     private EditText editMensagem;
+    private FloatingActionButton fabEnviar;
     private DatabaseReference database;
     private DatabaseReference mensagensRef;
     private ChildEventListener childEventListenerMensagens;
@@ -50,6 +53,7 @@ public class ChatActivity extends AppCompatActivity {
     private RecyclerView recyclerMensagens;
     private MensagensAdapter adapter;
     private List<Mensagem> mensagens = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +72,26 @@ public class ChatActivity extends AppCompatActivity {
         circleImageViewFoto = findViewById(R.id.circleImageFotoChat);
         editMensagem = findViewById(R.id.editMensagem);
         recyclerMensagens = findViewById(R.id.recyclerMensagens);
+        fabEnviar = findViewById(R.id.fabEnviar);
+
+        editMensagem.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction()!=KeyEvent.ACTION_DOWN)
+                    if (keyCode == KeyEvent.KEYCODE_ENTER) {
+                        enviarMensagem();
+                    }
+
+                return true;
+            }
+        });
+
+        fabEnviar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                enviarMensagem();
+            }
+        });
 
         //Recupera dados do usuario remetente
         idUsuarioRemetente = UsuarioFirebase.getIdentificadorUsuario();
@@ -108,7 +132,7 @@ public class ChatActivity extends AppCompatActivity {
                 .child(idUsuarioDestinatario);
     }
 
-    public void enviarMensagem(View view) {
+    public void enviarMensagem() {
 
         String textoMensagem = editMensagem.getText().toString();
 

@@ -1,10 +1,10 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.InserirActivity">
+    tools:context=".activity.DetalhesActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,44 +17,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <include layout="@layout/toolbar"/>
-
         <ImageView
             android:id="@+id/inserirServicoImagem"
+            android:backgroundTint="@color/cor_secundaria"
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:background="@drawable/ic_servico"
+            android:background="@drawable/ic_camera_24"
             android:elevation="10dp"
             android:scaleType="centerCrop" />
 
-        <EditText
+        <TextView
             android:id="@+id/inserirServicoTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
             android:layout_marginTop="50dp"
-            android:hint="Titulo do Serviço"
+            android:background="@color/white"
+            android:text="Titulo do Serviço"
             android:textSize="18sp"
-            android:textStyle="bold"/>
-        <requestFocus/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/inserirServicoUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="18dp"
+            android:layout_marginHorizontal="8dp"
+            android:background="@color/white"
             android:text="Usuario"
-            android:textSize="14sp"
-            android:textStyle="italic" />
+            android:textSize="14sp" />
 
-        <EditText
+        <TextView
             android:id="@+id/inserirServicoDescricao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
             android:layout_marginVertical="20dp"
-            android:layout_marginTop="50dp"
-            android:hint="Descreva informações sobre o serviço que deseja solicitar"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus ante et erat sagittis placerat. Ut id lacus nec erat eleifend facilisis quis vel nibh. Vivamus commodo enim ut ornare laoreet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis sagittis felis at malesuada interdum. Maecenas faucibus velit eget leo luctus commodo. Ut arcu ipsum, vehicula et felis at, eleifend auctor nulla. Sed sit amet sem eu leo efficitur egestas. Maecenas eu metus et quam vulputate venenatis et ac velit. Praesent ut dui eget ex gravida sodales. Fusce ante sapien, dignissim eget facilisis vitae, interdum at diam. Aenean non neque orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.  "
             android:textSize="14sp" />
 
     </LinearLayout>
@@ -65,8 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginBottom="16dp"
-        android:onClick="validarServico"
-        android:text="Criar Serviço"
+        android:text="Entrar em Contato"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

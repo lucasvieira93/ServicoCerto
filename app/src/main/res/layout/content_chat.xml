@@ -9,7 +9,8 @@
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activity.ChatActivity"
-    tools:showIn="@layout/activity_chat">
+    tools:showIn="@layout/activity_chat"
+    android:padding="12dp">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerMensagens"
@@ -58,7 +59,6 @@
             android:backgroundTint="@color/cor_principal"
             android:clickable="true"
             android:foregroundTint="@color/white"
-            android:onClick="enviarMensagem"
             app:fabSize="mini"
             app:srcCompat="@drawable/ic_enviar_24"
             app:tint="@android:color/white" />

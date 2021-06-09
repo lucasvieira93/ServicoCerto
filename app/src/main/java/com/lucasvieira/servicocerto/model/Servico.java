@@ -1,6 +1,13 @@
 package com.lucasvieira.servicocerto.model;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Exclude;
+import com.lucasvieira.servicocerto.config.ConfiguracaoFirebase;
+import com.lucasvieira.servicocerto.helper.UsuarioFirebase;
+
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Servico implements Serializable {
 
@@ -11,6 +18,34 @@ public class Servico implements Serializable {
     private String imagem;
 
     public Servico() {
+    }
+
+    public void salvar() {
+        DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebaseDatabase();
+        DatabaseReference servico = firebaseRef.child("servicos").child(getId());
+
+        servico.setValue(this);
+    }
+
+    public void atualizar() {
+        String identificadorServico = UsuarioFirebase.getIdentificadorUsuario();
+        DatabaseReference database = ConfiguracaoFirebase.getFirebaseDatabase();
+        DatabaseReference servicoRef = database.child("servico").child(identificadorServico);
+
+        Map<String, Object> valoresServico = converterParaMap();
+
+        servicoRef.updateChildren(valoresServico);
+    }
+
+    @Exclude
+    public Map<String, Object> converterParaMap() {
+        HashMap<String, Object> servicoMap = new HashMap<>();
+        servicoMap.put("titulo", getTitulo());
+        servicoMap.put("usuario", getUsuario());
+        servicoMap.put("descricao", getDescricao());
+        servicoMap.put("imagem", getImagem());
+
+        return servicoMap;
     }
 
     public String getId() {

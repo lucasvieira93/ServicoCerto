@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/capaImage"
+            android:id="@+id/inserirServicoImagem"
             android:backgroundTint="@color/cor_secundaria"
             android:layout_width="match_parent"
             android:layout_height="180dp"
@@ -27,7 +27,7 @@
             android:scaleType="centerCrop" />
 
         <TextView
-            android:id="@+id/detalheServicoTitulo"
+            android:id="@+id/inserirServicoTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
@@ -38,7 +38,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/detalheServicoUsuario"
+            android:id="@+id/inserirServicoUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
@@ -47,7 +47,7 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/detalheServicoDescricao"
+            android:id="@+id/inserirServicoDescricao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"

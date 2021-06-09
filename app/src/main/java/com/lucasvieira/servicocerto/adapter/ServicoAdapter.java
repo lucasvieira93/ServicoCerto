@@ -54,7 +54,7 @@ public class ServicoAdapter extends RecyclerView.Adapter<ServicoAdapter.MyViewHo
 
     @Override
     public int getItemCount() {
-        return this.listaServicos.size();
+            return this.listaServicos.size();
     }
 
 
@@ -69,7 +69,7 @@ public class ServicoAdapter extends RecyclerView.Adapter<ServicoAdapter.MyViewHo
             super(itemView);
 
             tituloServico = itemView.findViewById(R.id.listaServicoTitulo);
-            usuarioServico = itemView.findViewById(R.id.detalheServicoUsuario);
+            usuarioServico = itemView.findViewById(R.id.inserirServicoUsuario);
             descricaoServico = itemView.findViewById(R.id.listaServicoDescricao);
             imagemServico = itemView.findViewById(R.id.listaServicoImagem);
         }
