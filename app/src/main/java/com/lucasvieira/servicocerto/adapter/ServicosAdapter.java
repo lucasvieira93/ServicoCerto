@@ -13,38 +13,38 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.lucasvieira.servicocerto.R;
-import com.lucasvieira.servicocerto.model.Servico;
+import com.lucasvieira.servicocerto.model.Servicos;
 
 import java.util.List;
 
-public class ServicoAdapter extends RecyclerView.Adapter<ServicoAdapter.MyViewHolder> {
+public class ServicosAdapter extends RecyclerView.Adapter<ServicosAdapter.MyViewHolder> {
 
-    private List<Servico> listaServicos;
+    private List<Servicos> listaServicos;
     private Context context;
 
-    public ServicoAdapter(List<Servico> listaServicos, Context c) {
+    public ServicosAdapter(List<Servicos> listaServicos, Context c) {
         this.listaServicos = listaServicos;
         this.context = c;
     }
 
     @NonNull
     @Override
-    public ServicoAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ServicosAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View layoutLista = LayoutInflater.from(parent.getContext()).inflate(R.layout.lista_servico, parent, false);
         return new MyViewHolder(layoutLista);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ServicoAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ServicosAdapter.MyViewHolder holder, int position) {
 
-        Servico servico = listaServicos.get(position);
+        Servicos servicos = listaServicos.get(position);
 
-        holder.tituloServico.setText(servico.getTitulo());
-        holder.usuarioServico.setText(servico.getUsuario());
-        holder.descricaoServico.setText(servico.getDescricao());
+        holder.tituloServico.setText(servicos.getTitulo());
+        holder.usuarioServico.setText(servicos.getUsuario());
+        holder.descricaoServico.setText(servicos.getDescricao());
 
-        if (servico.getImagem() != null){
-            Uri uri = Uri.parse(servico.getImagem());
+        if (servicos.getImagem() != null){
+            Uri uri = Uri.parse(servicos.getImagem());
             Glide.with(context).load(uri).into(holder.imagemServico);
         } else {
             holder.imagemServico.setImageResource(R.drawable.ic_servico);

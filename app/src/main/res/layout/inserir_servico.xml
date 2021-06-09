@@ -23,11 +23,13 @@
             android:id="@+id/inserirServicoImagem"
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:background="@drawable/ic_servico"
+            android:background="@drawable/background"
             android:elevation="10dp"
             android:scaleType="centerCrop" />
 
         <EditText
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
             android:id="@+id/inserirServicoTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,7 +57,10 @@
             android:layout_marginVertical="20dp"
             android:layout_marginTop="50dp"
             android:hint="Descreva informações sobre o serviço que deseja solicitar"
-            android:textSize="14sp" />
+            android:textCursorDrawable="@color/cor_principal"
+            android:textSize="14sp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp" />
 
     </LinearLayout>
 
