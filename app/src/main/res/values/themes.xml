@@ -15,7 +15,7 @@
         <!-- Customize your theme here. -->
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
         <item name="android:textColorSecondary">@color/white</item>
-<!--        <item name="actionMenuTextColor">@color/white</item>-->
+        <item name="actionMenuTextColor">@color/white</item>
 
 
 

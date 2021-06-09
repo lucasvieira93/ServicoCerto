@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class Servicos implements Serializable {
 
     private String id;
@@ -22,7 +23,8 @@ public class Servicos implements Serializable {
 
     public void salvar() {
         DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebaseDatabase();
-        DatabaseReference servicos = firebaseRef.child("servicos").child(getId());
+        DatabaseReference servicos = firebaseRef.child("servicos")
+                .child(usuario + "-" + getId());
 
         servicos.setValue(this);
     }

@@ -19,10 +19,9 @@
 
         <ImageView
             android:id="@+id/inserirServicoImagem"
-            android:backgroundTint="@color/cor_secundaria"
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:background="@drawable/ic_camera_24"
+            android:background="@drawable/background"
             android:elevation="10dp"
             android:scaleType="centerCrop" />
 

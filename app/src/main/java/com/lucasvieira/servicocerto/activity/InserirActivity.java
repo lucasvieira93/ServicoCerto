@@ -30,7 +30,7 @@ import com.lucasvieira.servicocerto.R;
 import com.lucasvieira.servicocerto.config.ConfiguracaoFirebase;
 import com.lucasvieira.servicocerto.helper.Base64Custom;
 import com.lucasvieira.servicocerto.helper.UsuarioFirebase;
-import com.lucasvieira.servicocerto.model.Servico;
+import com.lucasvieira.servicocerto.model.Servicos;
 import com.lucasvieira.servicocerto.model.Usuario;
 
 import java.io.ByteArrayOutputStream;
@@ -57,7 +57,7 @@ public class InserirActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbarPrincipal);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("");
+        getSupportActionBar().setTitle("Inserir Serviço");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         campoTitulo = findViewById(R.id.inserirServicoTitulo);
@@ -91,7 +91,7 @@ public class InserirActivity extends AppCompatActivity {
         String textoDescricao = campoDescricao.getText().toString();
 
         if (!textoTitulo.isEmpty() || !textoDescricao.isEmpty()) {
-            Servico servico = new Servico();
+            Servicos servico = new Servicos();
             servico.setTitulo(textoTitulo);
             servico.setDescricao(textoDescricao);
             servico.setUsuario(textoUsuario);
@@ -103,12 +103,12 @@ public class InserirActivity extends AppCompatActivity {
         }
     }
 
-    private void cadastrarServico(Servico servico) {
+    private void cadastrarServico(Servicos servicos) {
 
         try {
-            String identificadorUsuario = Base64Custom.codificarBase64(servico.getUsuario());
-            servico.setId(identificadorUsuario);
-            servico.salvar();
+            String identificadorUsuario = Base64Custom.codificarBase64(servicos.getTitulo());
+            servicos.setId(identificadorUsuario);
+            servicos.salvar();
 
 
         } catch (Exception e) {
@@ -165,7 +165,7 @@ public class InserirActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Uri> task) {
                                     Uri url = task.getResult();
 
-                                    Servico servico = new Servico();
+                                    Servicos servico = new Servicos();
                                     servico.setImagem(url.toString());
                                     servico.salvar();
 
