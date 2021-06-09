@@ -40,11 +40,9 @@ public class HomeFragment extends Fragment {
 
     private RecyclerView recyclerViewHome;
     private ServicosAdapter servicosAdapter;
-    private List<Servicos> listaServicos = new ArrayList<>();
-    private DatabaseReference database;
+    private ArrayList<Servicos> listaServicos = new ArrayList<>();
     private DatabaseReference servicosRef;
     private ValueEventListener childEventListenerServicos;
-    private FirebaseUser usuarioLogado;
 
     public HomeFragment() {
     }
@@ -57,16 +55,6 @@ public class HomeFragment extends Fragment {
 
         recyclerViewHome = view.findViewById(R.id.recyclerHome);
         servicosRef = ConfiguracaoFirebase.getFirebaseDatabase().child("servicos");
-        usuarioLogado = UsuarioFirebase.getUsuarioAtual();
-
-        FloatingActionButton fab = view.findViewById(R.id.fabHome);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getActivity(), InserirActivity.class);
-                startActivity(i);
-            }
-        });
 
         //configurar adapter
         servicosAdapter = new ServicosAdapter(listaServicos, getActivity());
@@ -77,10 +65,20 @@ public class HomeFragment extends Fragment {
         recyclerViewHome.setHasFixedSize(true);
         recyclerViewHome.setAdapter(servicosAdapter);
 
+        //FAB --> Novo Serviço
+        FloatingActionButton fab = view.findViewById(R.id.fabHome);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), InserirActivity.class);
+                startActivity(i);
+            }
+        });
+
         //Configurar evento de clique no recyclerView
         recyclerViewHome.addOnItemTouchListener(
                 new RecyclerItemClickListener(
-                        getContext(),
+                        getActivity(),
                         recyclerViewHome,
                         new RecyclerItemClickListener.OnItemClickListener() {
                             @Override
@@ -104,14 +102,6 @@ public class HomeFragment extends Fragment {
                         }
                 )
         );
-
-
-        //Configura servicosRef
-//        String identificadorUsuario = UsuarioFirebase.getIdentificadorUsuario();
-        database = ConfiguracaoFirebase.getFirebaseDatabase();
-        servicosRef = database.child("Servicos");
-        recuperarServicos();
-
 
         return view;
     }
@@ -137,7 +127,6 @@ public class HomeFragment extends Fragment {
                 for (DataSnapshot dados : dataSnapshot.getChildren()) {
 
                     Servicos servicos = dados.getValue(Servicos.class);
-
                         listaServicos.add(servicos);
 
                 }

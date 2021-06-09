@@ -69,7 +69,7 @@ public class ServicosAdapter extends RecyclerView.Adapter<ServicosAdapter.MyView
             super(itemView);
 
             tituloServico = itemView.findViewById(R.id.listaServicoTitulo);
-            usuarioServico = itemView.findViewById(R.id.inserirServicoUsuario);
+            usuarioServico = itemView.findViewById(R.id.listaServicoUsuario);
             descricaoServico = itemView.findViewById(R.id.listaServicoDescricao);
             imagemServico = itemView.findViewById(R.id.listaServicoImagem);
         }

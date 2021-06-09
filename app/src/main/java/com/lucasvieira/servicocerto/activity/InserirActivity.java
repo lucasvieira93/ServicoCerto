@@ -93,8 +93,8 @@ public class InserirActivity extends AppCompatActivity {
         if (!textoTitulo.isEmpty() || !textoDescricao.isEmpty()) {
             Servicos servico = new Servicos();
             servico.setTitulo(textoTitulo);
-            servico.setDescricao(textoDescricao);
             servico.setUsuario(textoUsuario);
+            servico.setDescricao(textoDescricao);
 
             cadastrarServico(servico);
 
